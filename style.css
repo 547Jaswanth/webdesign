@@ -1,0 +1,93 @@
+body {
+    background: url("images/buddha1.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+h1 {
+    text-align: center;
+    font-family: Matura MT Script Capitals;
+    color:rgb(235, 32, 9);
+    text-shadow: 0 7px 10px rgb(4, 199, 199);
+}
+
+fieldset {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif,;
+    background-color: rgba(156, 195, 202, 0.314);
+    border-radius: 6px 40px;
+    border-color: orange;
+    margin-top: 10px;
+    
+}
+
+fieldset > legend {
+    background-color: rgba(211, 205, 20, 0.873);;
+    border-radius: 6px 30px;
+    height: 20px;
+    font-family: Ravie;
+    padding: 10px;
+}
+
+input[type="text"], input[type="date"], select {
+    border-radius: 10px;
+    height: 30px;
+    border: none;
+    font-family: Harrington;
+    text-transform: capitalize;
+}
+textarea
+{
+    font-family: Harrington;
+    text-transform: capitalize;
+}
+
+input[type="text"]:focus, input[type="date"]:focus {
+    background-color: red;
+    color: white;
+}
+
+input[type="submit"], input[type="reset"] {
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0 10px 0 10px;
+    box-shadow: 0 0 10px black;
+    
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover {
+    background-color: green;
+    box-shadow: 0 0 10px yellow;
+    color: red;
+}
+
+table {
+    width: 100%;
+}
+
+textarea {
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+textarea:focus {
+    background-color: red;
+}
+
+select {
+    border-radius: 10px;
+    border: none;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+marquee
+{
+    font-family:Matura MT Script Capitals ;
+    color:rgb(241, 7, 198);
+    text-decoration-line: underline;
+    
+}
