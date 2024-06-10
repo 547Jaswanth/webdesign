@@ -1,93 +1,130 @@
+* {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background: url("images/buddha1.jpg") no-repeat center center fixed;
-    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
 }
 
-h1 {
-    text-align: center;
-    font-family: Matura MT Script Capitals;
-    color:rgb(235, 32, 9);
-    text-shadow: 0 7px 10px rgb(4, 199, 199);
-}
-
-fieldset {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif,;
-    background-color: rgba(156, 195, 202, 0.314);
-    border-radius: 6px 40px;
-    border-color: orange;
-    margin-top: 10px;
-    
-}
-
-fieldset > legend {
-    background-color: rgba(211, 205, 20, 0.873);;
-    border-radius: 6px 30px;
-    height: 20px;
-    font-family: Ravie;
-    padding: 10px;
-}
-
-input[type="text"], input[type="date"], select {
-    border-radius: 10px;
-    height: 30px;
-    border: none;
-    font-family: Harrington;
-    text-transform: capitalize;
-}
-textarea
-{
-    font-family: Harrington;
-    text-transform: capitalize;
-}
-
-input[type="text"]:focus, input[type="date"]:focus {
-    background-color: red;
+header {
+    background-color: black;
     color: white;
+    padding: 20px;
+    text-align: left;
 }
 
-input[type="submit"], input[type="reset"] {
-    outline: none;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 0 10px 0 10px;
-    box-shadow: 0 0 10px black;
-    
+header >h1::first-letter {
+    color: orange;
 }
 
-input[type="submit"]:hover, input[type="reset"]:hover {
-    background-color: green;
-    box-shadow: 0 0 10px yellow;
+nav {
+    background-color: rgb(197, 192, 186);
+    padding: 15px;
+    text-align: center;
+}
+
+nav > a {
+    text-decoration: none;
+    background-color: orange;
+    padding: 10px 30px;
+    border-radius: 10px;
+    margin: 0 15px;
+    text-align: center;
+}
+
+nav > a:hover {
+    background-color: yellow;
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+aside {
+    background-color: black;
+    color: white;
+    width: 120px;
+    flex-shrink: 0;
+}
+
+aside > a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding-bottom: 70px;
+    text-align: center;
+    margin: 10px 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+aside > a:hover {
     color: red;
 }
 
-table {
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
     width: 100%;
 }
 
-textarea {
-    border-radius: 10px;
-    border: none;
-    outline: none;
+section {
+    margin-bottom: 20px;
+}
+
+section > p {
+    font-family: 'Bodoni MT';
+    width: 100%;
+}
+
+section > h1 {
+    font-family: Algerian;
+    text-align: center;
+}
+
+.articles-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.articles-row {
+    display: inline-flex;
+    gap: 20px;
+}
+
+article {
+    border: 2px solid orange;
+    font-family: 'Bodoni MT';
+    padding: 10px;
+    flex: 1;
+}
+
+footer {
+    background-color: black;
     color: white;
+    padding: 26px;
+    text-align: center;
 }
 
-textarea:focus {
-    background-color: red;
+footer table {
+    width: 100%;
 }
 
-select {
-    border-radius: 10px;
-    border: none;
+footer td > a {
+    display: inline;
+    color: gray;
+    font-size: 30px;
+    text-decoration: none;
+    padding: 10px;
+    font-family: 'Bradley Hand ITC';
 }
 
-input {
-    border: none;
-    outline: none;
-}
-marquee
-{
-    font-family:Matura MT Script Capitals ;
-    color:rgb(241, 7, 198);
-    text-decoration-line: underline;
-    
+footer td > a:hover {
+    color: red;
 }
