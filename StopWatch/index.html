@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        span {
+            font-size: 30px;
+        }
+        .card {
+            background-color: rgba(98, 214, 214, 0.367) !important; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+                <div class="card bg-primary text-center">
+                    <div class="card-header bg-secondary"><h3>StopWatch</h3></div>
+                    <div class="card-body text-center">
+                        <span id="min">00</span>
+                        <span id="sec">00</span>
+                        <span id="m-sec">00</span>
+                    </div>
+                    <div class="mt-1 text-center mb-3">
+                        <button id="start-btn" class="btn btn-success"
+                        >Start</button>
+                        <button id="stop-btn" class="btn btn-danger">Stop</button>
+                        <button id="reset-btn" class="btn btn-warning">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- script code -->
+    <script>
+        let minTag = document.getElementById("min");
+        let secTag = document.getElementById("sec");
+        let msecTag = document.getElementById("m-sec");
+
+        let startBtn = document.getElementById("start-btn");
+        let stopBtn = document.getElementById("stop-btn");
+        let resetBtn = document.getElementById("reset-btn");
+
+        let min = 0;
+        let sec = 0;
+        let msec = 0;
+
+        let flag = false;
+        function concatZero(time) {
+            if (time <= 9) return "0" + time;
+            else return time;
+        }
+        function timer() {
+            msec = msec + 1;
+            if (msec == 100) {
+                sec = sec + 1;
+                msec = 0;
+                if (sec == 60) {
+                    min = min + 1;
+                    sec = 0;
+                }
+            }
+            msecTag.innerText = concatZero(msec);
+            secTag.innerText = concatZero(sec);
+            minTag.innerText = concatZero(min);
+        }
+
+        let interval = null;
+        startBtn.addEventListener('click', function() {
+            if (!flag) {
+                interval = setInterval(timer, 10);
+                flag = true;
+            }
+        });
+
+        stopBtn.addEventListener('click', function() {
+            if (flag) {
+                clearInterval(interval);
+                flag = false;
+            }
+        });
+        resetBtn.addEventListener('click', function() {
+            clearInterval(interval);
+            flag = false;
+            msec = 0;
+            sec = 0;
+            min = 0;
+
+            minTag.innerText = "00";
+            secTag.innerText = "00";
+            msecTag.innerText = "00";
+        });
+    </script>
+</body>
+</html>
